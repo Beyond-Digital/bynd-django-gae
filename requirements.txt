@@ -1,0 +1,16 @@
+Fabric==1.6.0
+PIL==1.1.7
+PyYAML==3.10
+South==0.7.6
+coverage==3.6
+gdata==2.0.17
+mock==1.0.1
+python-dateutil==1.5
+requests==1.1.0
+robotframework==2.7.7
+selenium==2.32.0
+vboxapi==1.0
+virtualenv==1.9.1
+wsgiref==0.1.2
+xattr==0.6.1
+zope.interface==3.5.1

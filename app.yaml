@@ -1,0 +1,59 @@
+application: {{ project_name }}
+version: local
+runtime: python27
+api_version: 1
+threadsafe: true
+
+libraries:
+- name: django
+  version: "1.5"
+- name: PIL
+  version: "1.1.7"
+
+builtins:
+- django_wsgi: on
+
+env_variables:
+  DJANGO_SETTINGS_MODULE: '{{ project_name }}.settings'
+
+handlers:
+- url: /favicon.ico
+  static_files: static/favicon.ico
+  upload: static/favicon.ico
+  expiration: '7d'
+
+- url: /static/(.*)
+  static_files: static/\1
+  upload: static/(.*)
+  expiration: '14d'
+  http_headers:
+    Vary: Accept-Encoding
+
+pagespeed:
+ enabled_rewriters:
+
+ # These are enabled by default, but better to explictiy set
+  - ProxyCss
+  - ProxyImages
+  - ProxyJs
+  - ConvertMetaTags
+  - CombineCss
+  - CombineJs
+  - JsOptimize
+  # .. bunch of image optims
+
+# Optional
+  - InlineJs
+  - CollapseWhitespace
+  - CombineHeads
+  - RemoveComments
+  - RemoveQuotes
+  - LeftTrimUrls
+  - MinifyCss
+
+ disabled_rewriters:
+  - MoveCssToHead
+  - InlineCss
+  - InlinePreviewImages
+  - LazyloadImages
+  - ElideAttributes
