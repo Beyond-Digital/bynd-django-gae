@@ -10,12 +10,13 @@ https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+BASE_DIR = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 
 import sys
+
 # Add lib folder
-sys.path.append('lib')
-sys.path.append('lib/vendor.zip')
+sys.path.append(os.path.join(BASE_DIR, 'lib'))
+sys.path.append(os.path.join(BASE_DIR, 'lib/vendor.zip'))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '{{ secret_key }}'
@@ -52,7 +53,6 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = '{{ project_name }}.urls'
 
 WSGI_APPLICATION = '{{ project_name }}.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/#databases
