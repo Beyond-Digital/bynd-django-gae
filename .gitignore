@@ -17,3 +17,4 @@ staging.json
 
 paths
 .vagrant
+static/admin

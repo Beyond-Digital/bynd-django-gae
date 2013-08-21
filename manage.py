@@ -10,8 +10,6 @@ try:
     sys.path.append(appserver_path)
 except:
     print "Cant find appserver, probably going to fail"
-    pass
-
 
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "{{ project_name }}.settings")
