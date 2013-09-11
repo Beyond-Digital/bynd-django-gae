@@ -9,14 +9,14 @@ https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/
 """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-import os
-BASE_DIR = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+import os, sys
 
-import sys
+BASE_DIR = os.path.abspath(
+    os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+)
 
 # Add lib folder
 sys.path.append(os.path.join(BASE_DIR, 'lib'))
-sys.path.append(os.path.join(BASE_DIR, 'lib/vendor.zip'))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '{{ secret_key }}'
