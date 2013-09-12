@@ -1,11 +1,4 @@
-##########################################
-# MAC OS
-##########################################
 .DS_Store
-
-##########################################
-# ECLIPSE
-##########################################
 .settings
 .project
 *.db
@@ -13,8 +6,7 @@
 /nbproject/private/
 nbproject
 /env/
-staging.json
-
-paths
 .vagrant
 static/admin
+build
+lib/vendor.zip

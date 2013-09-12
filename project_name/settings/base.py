@@ -17,6 +17,7 @@ BASE_DIR = os.path.abspath(
 
 # Add lib folder
 sys.path.append(os.path.join(BASE_DIR, 'lib'))
+sys.path.append(os.path.join(BASE_DIR, 'lib/vendor.zip'))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '{{ secret_key }}'
