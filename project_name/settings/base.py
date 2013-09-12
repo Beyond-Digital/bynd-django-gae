@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os, sys
 
+import django.conf.global_settings as default_settings
+
 BASE_DIR = os.path.abspath(
     os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 )
