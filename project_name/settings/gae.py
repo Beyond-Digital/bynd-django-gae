@@ -6,3 +6,10 @@ DATABASES = {
         'INSTANCE': 'bynd.com:bynd_testing:bynd_testing',
     }
 }
+
+CACHES = {
+    'default': {
+        'BACKEND': 'gae_memcached.GAEMemcachedCache',
+        'TIMEOUT': 0,
+    }
+}
