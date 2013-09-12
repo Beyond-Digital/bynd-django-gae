@@ -1,5 +1,3 @@
-import os
-
 """
 Namespacing:
 
@@ -16,6 +14,8 @@ live-*
 Applies to datastore, memcache and task queues
 See: https://developers.google.com/appengine/docs/python/multitenancy/multitenancy#Setting_the_Current_Namespace
 """
+import os
+
 try:
     namespace = os.environ['CURRENT_VERSION_ID'].split('.')[0].split('-')[0]
 except KeyError:
