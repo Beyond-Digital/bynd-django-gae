@@ -24,7 +24,10 @@ sys.path.append(os.path.join(BASE_DIR, 'lib/vendor.zip'))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '{{ secret_key }}'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '{{ project_name }}.appspot.com',
+    'staging-dot-{{ project_name }}.appspot.com',
+]
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),
