@@ -7,7 +7,7 @@ Hence unique namespaces are:
 
 local
 dev
-qa
+testing
 staging-*
 live-*
 
