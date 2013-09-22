@@ -4,4 +4,4 @@ from .gae import *
 
 DEBUG = True
 
-DATABASES['default']['name'] = '{{ project_name }}_dev'
+DATABASES['default']['NAME'] = '{{ project_name }}_dev'
