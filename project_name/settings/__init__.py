@@ -9,8 +9,7 @@ import importlib
 import sys
 
 # Bring vars from env-specific settings file into scope
-curr_module = sys.modules[__name__]
-env_settings = importlib.import_module('.%s' % env, package=__package__)
+IMP = vars(importlib.import_module('.%s' % env, package=__package__))
 
-for var, value in vars(env_settings).iteritems():
-    setattr(curr_module, var, value)
+for var, value in IMP.iteritems():
+    setattr(sys.modules[__name__], var, value)

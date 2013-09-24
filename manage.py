@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import os
-from subprocess import check_output, Popen, PIPE
+from subprocess import check_output
 import sys
 
 # Add GAE libs to path
