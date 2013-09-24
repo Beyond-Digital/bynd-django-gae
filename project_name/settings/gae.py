@@ -13,3 +13,5 @@ CACHES = {
         'TIMEOUT': 0,
     }
 }
+
+SOUTH_DATABASE_ADAPTERS = {'default': 'south.db.mysql'}
