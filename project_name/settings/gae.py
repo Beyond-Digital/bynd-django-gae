@@ -14,4 +14,11 @@ CACHES = {
     }
 }
 
+TEMPLATE_LOADERS = (
+    ('django.template.loaders.cached.Loader', (
+        'django.template.loaders.filesystem.Loader',
+        'django.template.loaders.app_directories.Loader',
+    )),
+)
+
 SOUTH_DATABASE_ADAPTERS = {'default': 'south.db.mysql'}
