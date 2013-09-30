@@ -7,7 +7,8 @@ import sys
 try:
     appserver_location = check_output("which dev_appserver.py", shell=True).strip()
     appserver_path = os.path.split(os.path.realpath(appserver_location))[0]
-    sys.path.append(appserver_path)
+    sys.path.insert(0, appserver_path)
+    sys.path.insert(0, os.path.join(os.path.join(appserver_path,'lib'),'django-1.5'))
 except:
     print "Cant find appserver, probably going to fail"
 
