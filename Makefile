@@ -1,4 +1,7 @@
-all: download_deps
+all: download_deps collectstatic
+
+collectstatic:
+	python manage.py collectstatic
 
 download_deps:
 	rm -rf vendor/*

@@ -66,6 +66,15 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
+CACHES = {
+    'default': {
+        'BACKEND': 'gaekit.caches.GAEMemcachedCache',
+        'TIMEOUT': 0,
+    }
+}
+
+DEFAULT_FILE_STORAGE = 'gaekit.storages.CloudStorage'
+GS_BUCKET_NAME = 'bucket_name'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/{{ docs_version }}/howto/static-files/

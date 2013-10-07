@@ -9,3 +9,5 @@ Use this template to get started with a django project using GAE/Cloud SQL.
     $ django-admin.py startproject --template \
     https://github.com/Beyond-Digital/bynd-django-gae/archive/master.zip \
     --extension yaml project_name
+
+    $ make
