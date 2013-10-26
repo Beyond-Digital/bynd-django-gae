@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+import os
+gettext = lambda s: s
 """
 Django settings for {{ project_name }} project.
 
@@ -9,9 +12,10 @@ https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/
 """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-import os, sys
-
+import sys
 import django.conf.global_settings as default_settings
+
+SITE_ID = 1
 
 BASE_DIR = os.path.abspath(
     os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
@@ -40,7 +44,16 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
     'django.contrib.staticfiles',
+
+    # Django-cms
+    'cms',
+    'mptt',
+    'menus',
+    'south',
+    'sekizai',
+
     '{{ project_name }}'
 )
 
@@ -51,7 +64,27 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # django-cms
+    'cms.middleware.page.CurrentPageMiddleware',
+    'cms.middleware.user.CurrentUserMiddleware',
+    'cms.middleware.toolbar.ToolbarMiddleware',
+    'cms.middleware.language.LanguageCookieMiddleware',
 )
+
+TEMPLATE_CONTEXT_PROCESSORS = default_settings.TEMPLATE_CONTEXT_PROCESSORS + (
+    'django.core.context_processors.request',
+    'cms.context_processors.media',
+    'sekizai.context_processors.sekizai',
+)
+
+CMS_TEMPLATES = (
+    ('base.html', 'Template One'),
+)
+
+LANGUAGES = [
+    ('en', 'English'),
+]
 
 ROOT_URLCONF = '{{ project_name }}.urls'
 
