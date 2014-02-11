@@ -18,20 +18,14 @@ BASE_DIR = os.path.abspath(
 )
 
 # Add lib folder
-sys.path.append(os.path.join(BASE_DIR, 'lib'))
 sys.path.append(os.path.join(BASE_DIR, 'vendor'))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '{{ secret_key }}'
 
 ALLOWED_HOSTS = [
-    '{{ project_name }}.appspot.com',
-    'staging-dot-{{ project_name }}.appspot.com',
+    '.{{ project_name }}.appspot.com',
 ]
-
-TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'templates'),
-)
 
 # Application definition
 INSTALLED_APPS = (
