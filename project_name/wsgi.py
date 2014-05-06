@@ -7,7 +7,10 @@ For more information on this file, see
 https://docs.djangoproject.com/en/{{ docs_version }}/howto/deployment/wsgi/
 """
 
-import os
+import os, sys
+sys.path.insert(0, 
+    os.path.join(os.path.dirname(os.path.dirname(__file__)), 'vendor'))
+
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "{{ project_name }}.settings")
 
 from django.core.wsgi import get_wsgi_application

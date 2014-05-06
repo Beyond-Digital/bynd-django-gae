@@ -1,8 +1,7 @@
-all: download_deps collectstatic
+all: clean download_requirements 
 
-collectstatic:
-	python manage.py collectstatic
-
-download_deps:
+clean:
 	rm -rf vendor/*
-	pip install -t vendor -r requirements.txt
+
+download_requirements:
+	pip install -t vendor --install-option=--prefix='' --no-deps -r requirements.txt
