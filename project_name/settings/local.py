@@ -10,5 +10,11 @@ DATABASES = {
     }
 }
 
+ALLOWED_HOSTS = ['*']
+
+# Override these for local since no SSL
+SECURE_SSL_REDIRECT = False
+SESSION_COOKIE_HTTPONLY = False
+
 from gaekit.boot import break_sandbox
 break_sandbox()

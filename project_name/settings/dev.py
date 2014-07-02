@@ -11,3 +11,5 @@ DATABASES = {
         'NAME': '{{ project_name }}_dev'
     }
 }
+
+ALLOWED_HOSTS = ['dev-dot-{{ project_name }}.appspot.com']

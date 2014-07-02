@@ -11,3 +11,5 @@ DATABASES = {
         'NAME': '{{ project_name }}_staging'
     }
 }
+
+ALLOWED_HOSTS = ['staging-dot-{{ project_name }}.appspot.com']

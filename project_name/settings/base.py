@@ -23,22 +23,26 @@ sys.path.append(os.path.join(BASE_DIR, 'vendor'))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '{{ secret_key }}'
 
-ALLOWED_HOSTS = [
-    '.{{ project_name }}.appspot.com',
-]
-
 # Application definition
 INSTALLED_APPS = (
+
+    # Contrib apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Vendor apps
+    'djangosecure',
+
+    # Project apps
     '{{ project_name }}'
 )
 
 MIDDLEWARE_CLASSES = (
+    'djangosecure.middleware.SecurityMiddleware',
     'google.appengine.ext.ndb.django_middleware.NdbDjangoMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -76,3 +80,18 @@ GS_BUCKET_NAME = 'bucket_name'
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# Use cookie session engine
+SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
+SESSION_COOKIE_SECURE = True
+SESSION_COOKIE_HTTPONLY = True
+
+# Security settings
+CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
+SECURE_HSTS_SECONDS = 2592000
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_FRAME_DENY = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_BROWSER_XSS_FILTER = True
+
