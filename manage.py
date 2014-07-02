@@ -3,6 +3,8 @@ import os
 from subprocess import check_output
 import sys
 
+sys.path.insert(0, os.path.join(os.path.basename(__file__), 'vendor'))
+
 # Add GAE libs to path
 try:
     appserver_location = check_output("which dev_appserver.py", shell=True).strip()
