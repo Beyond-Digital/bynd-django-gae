@@ -4,9 +4,8 @@
 *.db
 *.pyc
 /nbproject/private/
-nbproject
 /env/
-.vagrant
-static/admin
-build
-lib/vendor.zip
+/.vagrant
+/static
+/vendor
+
