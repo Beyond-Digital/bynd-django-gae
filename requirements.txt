@@ -1,3 +1,4 @@
 django==1.7.1
 django-secure==1.0.1
 django-gaekit==0.2.9
+GoogleAppEngineCloudStorageClient==1.9.15.0
