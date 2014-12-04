@@ -15,6 +15,7 @@ ALLOWED_HOSTS = ['*']
 # Override these for local since no SSL
 SECURE_SSL_REDIRECT = False
 SESSION_COOKIE_HTTPONLY = False
+SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = False
 
 from gaekit.boot import break_sandbox
