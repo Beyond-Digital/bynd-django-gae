@@ -3,7 +3,7 @@ import os
 from subprocess import check_output
 import sys
 
-sys.path.insert(0, os.path.join(os.path.basename(__file__), 'vendor'))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'vendor'))
 
 # Add GAE libs to path
 try:
