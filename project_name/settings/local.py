@@ -18,5 +18,7 @@ SESSION_COOKIE_HTTPONLY = False
 SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = False
 
+STATIC_URL = '/devstatic/'
+
 from gaekit.boot import break_sandbox
 break_sandbox()
