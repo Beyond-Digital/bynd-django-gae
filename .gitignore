@@ -1,11 +1,10 @@
 .DS_Store
 .settings
 .project
-*.db
+.python-version
+*.sqlite3
 *.pyc
 /nbproject/private/
-/env/
 /.vagrant
 /static
 /vendor
-
