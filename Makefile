@@ -1,4 +1,4 @@
-all: clean download_requirements collectstatic
+all: download_requirements collectstatic
 
 clean:
 	rm -rf vendor/*
