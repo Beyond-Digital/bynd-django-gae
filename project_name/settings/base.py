@@ -9,16 +9,17 @@ https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/
 """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-import os, sys
-
+import os
+import sys
 import django.conf.global_settings as default_settings
 
 BASE_DIR = os.path.abspath(
     os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 )
 
-# Add lib folder
+# Add vendor folder and apps folder
 sys.path.append(os.path.join(BASE_DIR, 'vendor'))
+sys.path.append(os.path.join(BASE_DIR, 'apps'))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '{{ secret_key }}'
@@ -52,9 +53,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
-
-TEMPLATE_CONTEXT_PROCESSORS = TCP + (
+TEMPLATE_CONTEXT_PROCESSORS = default_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     'django.core.context_processors.request',
 )
 
@@ -98,3 +97,5 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_FRAME_DENY = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_BROWSER_XSS_FILTER = True
+
+CLOUD_SQL_EXTERNAL_IP = ''
