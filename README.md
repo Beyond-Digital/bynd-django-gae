@@ -1,5 +1,7 @@
 ### Bynd-Django-GAE
 
+[![Requirements Status](https://requires.io/github/Beyond-Digital/bynd-django-gae/requirements.svg?branch=master)](https://requires.io/github/Beyond-Digital/bynd-django-gae/requirements/?branch=master)
+
 ## Synopsis
 
 Use this template to get started with a django project using GAE/Cloud SQL.
